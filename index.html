@@ -1,0 +1,28 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function(){
+           $.get('input.txt', function(data) {
+               // #echo_file = id from div
+               $('#echo_file').html(data);
+               alert('Load was performed.');
+           });
+       })
+   </script>
+</head>
+<div class="container">
+    <div class="achievement-banner animated">
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-loader"></div>
+        <div class="achievement-trophy xbox-icon xbox-logo"><img class="trophy" src="trophy.png" width="45" height="45"></div>
+
+        <div class="achievement-text">
+            <p class="achievement-notification">Achievement Unlocked</p>
+            <p class="achievement-name"><i class="xbox-icon xbox-gamerscore"></i><embed style="achievement-text" src="input.html"></p>
+        </div>
+    </div>
+</div>
