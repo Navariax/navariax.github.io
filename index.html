@@ -8,8 +8,32 @@
                $('#echo_file').html(data);
            });
        })
+	   
+		function getParams() {
+			var idx = document.URL.indexOf('?');
+			var params = new Array();
+				if (idx != -1) {
+					var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+					for (var i=0; i<pairs.length; i++) {
+						nameVal = pairs[i].split('=');
+						params[nameVal[0]] = nameVal[1];
+					}
+				}
+			return params;
+		}		
+		params = getParams();
    </script>
 </head>
+
+<script>
+
+var para1=document.getElementById('inputtext');
+var para2=document.getElementById('element2');
+
+para1.value = unescape(params["var1"]);
+para2.value = unescape(params["var2"]);
+
+</script> 
 <div class="container">
     <div class="achievement-banner animated">
         <div class="achievement-loader"></div>
@@ -21,7 +45,7 @@
 
         <div class="achievement-text">
             <p class="achievement-notification">Achievement Unlocked</p>
-            <p class="achievement-name"><i class="xbox-icon xbox-gamerscore"></i><embed style="achievement-text" src="input.html"></p>
+            <p class="achievement-name"><i class="xbox-icon xbox-gamerscore"></i><div style="achievement-text" id="inputtext"></div></p>
         </div>
     </div>
 </div>
